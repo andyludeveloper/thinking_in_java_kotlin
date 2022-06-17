@@ -22,6 +22,10 @@ class LiftOff(private var countDown: Int = 10) : Runnable {
 }
 
 fun main() {
-    val launch = LiftOff()
-    launch.run()
+    repeat(5) {
+        Thread(LiftOff()).start()
+    }
+    println("Waiting for Liftoff!")
+//    val launch = LiftOff()
+//    launch.run()
 }
